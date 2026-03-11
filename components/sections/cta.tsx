@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { MessageCircle, Calendar } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function CTASection() {
@@ -25,31 +25,32 @@ export function CTASection() {
 
           <div className="relative text-center">
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
-              Ready to Elevate Your Content?
+              {"Let's Work Together"}
             </h2>
             <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-              Let&apos;s work together to create stunning visuals and content that 
-              helps your brand stand out and grow.
+              {"Tell us about your project and we'll provide a custom quote."}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 h-12"
+                variant="secondary"
+                className="rounded-full px-8 h-12"
               >
                 <Link href="/contact">
-                  Get a Free Consultation
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Contact Us
                 </Link>
               </Button>
               <Button 
                 asChild 
                 size="lg" 
                 variant="outline" 
-                className="rounded-full px-8 h-12 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="rounded-full px-8 h-12 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
-                <Link href="/portfolio">
-                  See Our Work
+                <Link href="/contact">
+                  <Calendar className="mr-2 w-5 h-5" />
+                  Book a Meeting
                 </Link>
               </Button>
             </div>
