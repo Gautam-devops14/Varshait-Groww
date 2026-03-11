@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, Instagram, Youtube, Linkedin } from "lucide-react"
+import { Mail, Phone, Instagram, Youtube, Linkedin, Facebook } from "lucide-react"
 
 const footerLinks = {
   services: [
@@ -51,6 +51,13 @@ export function Footer() {
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="#" 
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>
