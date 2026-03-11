@@ -25,10 +25,10 @@ export function CTASection() {
 
           <div className="relative text-center">
             <h2 className="font-display text-3xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
-              {"Let's Work Together"}
+              Let&apos;s Work Together
             </h2>
             <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-              {"Tell us about your project and we'll provide a custom quote."}
+              Tell us about your project and we&apos;ll provide a custom quote.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button 
