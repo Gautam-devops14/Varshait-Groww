@@ -100,6 +100,7 @@ const services = [
     subtitle: "Modern Websites",
     description: "Beautiful, responsive websites that convert visitors into customers. We build modern sites optimized for speed, SEO, and user experience.",
     color: "from-green-500 to-emerald-500",
+    comingSoon: true,
     features: [
       {
         icon: Palette,
@@ -177,9 +178,16 @@ export default function ServicesPage() {
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6`}>
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <span className="text-sm font-medium text-accent uppercase tracking-wide">
-                    {service.subtitle}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-medium text-accent uppercase tracking-wide">
+                      {service.subtitle}
+                    </span>
+                    {service.comingSoon && (
+                      <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
                   <h2 className="font-display text-3xl lg:text-4xl font-bold mt-2 mb-4">
                     {service.title}
                   </h2>

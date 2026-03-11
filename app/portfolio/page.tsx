@@ -359,9 +359,14 @@ export default function PortfolioPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="font-display text-2xl lg:text-3xl font-bold mb-8">
-                Website Design
-              </h2>
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="font-display text-2xl lg:text-3xl font-bold">
+                  Website Design
+                </h2>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                  Coming Soon
+                </span>
+              </div>
 
               {/* Website Cards */}
               <div className="grid md:grid-cols-2 gap-8">

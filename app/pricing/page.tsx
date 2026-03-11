@@ -11,19 +11,19 @@ const pricingItems = [
   {
     icon: Film,
     title: "Long Form Video Editing",
-    price: "1500",
+    price: "1499",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: Video,
     title: "Short Form Video Editing",
-    price: "1000",
+    price: "999",
     color: "from-purple-500 to-pink-500",
   },
   {
     icon: ImageIcon,
     title: "Thumbnail Design",
-    price: "500",
+    price: "499",
     color: "from-orange-500 to-red-500",
   },
 ]

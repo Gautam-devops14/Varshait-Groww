@@ -32,6 +32,7 @@ const services = [
     href: "/services#website",
     color: "bg-green-500/10 text-green-600",
     hoverColor: "group-hover:bg-green-500",
+    comingSoon: true,
   },
 ]
 
@@ -72,7 +73,14 @@ export function ServicesPreview() {
                 <service.icon className={`w-8 h-8 group-hover:text-white transition-colors`} />
               </div>
               
-              <h3 className="font-display font-bold text-xl mb-3">{service.title}</h3>
+              <div className="flex items-center gap-3 mb-3">
+                <h3 className="font-display font-bold text-xl">{service.title}</h3>
+                {service.comingSoon && (
+                  <span className="px-2 py-0.5 rounded-full bg-accent/10 text-accent text-xs font-medium">
+                    Coming Soon
+                  </span>
+                )}
+              </div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                 {service.description}
               </p>
