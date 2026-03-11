@@ -30,10 +30,9 @@ const values = [
 ]
 
 const stats = [
-  { value: "500+", label: "Thumbnails Designed" },
-  { value: "200+", label: "Videos Edited" },
-  { value: "50+", label: "Websites Built" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: "350+", label: "Thumbnails Designed" },
+  { value: "100+", label: "Videos Edited" },
+  { value: "35+", label: "Happy Clients" },
 ]
 
 export default function AboutPage() {
@@ -128,7 +127,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-8"
+              className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
             >
               {stats.map((stat, index) => (
                 <motion.div
@@ -210,18 +209,20 @@ export default function AboutPage() {
                 From Passion to Purpose
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                VARSHAIT Creative Studio was born from a simple observation: too many talented 
-                creators were struggling to get their content seen because they lacked 
-                professional-quality visuals.
+                VARSHAIT Creative Studio began with a simple idea shared among three friends and 
+                two fathers who believed that every creator deserves access to professional-quality 
+                design and media services.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                We started as a small team of designers and editors who were passionate about 
-                helping creators succeed. Over time, we expanded our services to include website 
-                design, recognizing that a strong online presence goes beyond just YouTube.
+                We noticed too many talented creators were struggling to get their content seen 
+                because they lacked eye-catching thumbnails and professionally edited videos. 
+                So we decided to change that by building a creative studio that truly understands 
+                the needs of content creators.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Today, we are proud to have helped hundreds of creators and businesses achieve 
-                their goals. But we are just getting started — and we would love to help you next.
+                Today, we are proud to have helped creators and businesses achieve their goals 
+                with 350+ thumbnails, 100+ videos, and counting. But we are just getting started 
+                — and we would love to help you next.
               </p>
             </motion.div>
           </div>

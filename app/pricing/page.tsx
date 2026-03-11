@@ -133,7 +133,7 @@ export default function PricingPage() {
                   Contact Us
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+              <Button asChild size="lg" className="rounded-full px-8 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors">
                 <Link href="/contact">
                   <Calendar className="mr-2 w-5 h-5" />
                   Book a Meeting

@@ -112,7 +112,7 @@ export function ServicesPreview() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Button asChild size="lg" variant="outline" className="rounded-full px-8">
+          <Button asChild size="lg" variant="outline" className="rounded-full px-8 hover:bg-primary hover:text-primary-foreground transition-colors">
             <Link href="/services">
               View All Services
               <ArrowRight className="ml-2 w-4 h-4" />

@@ -35,7 +35,7 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12">
+            <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12 hover:bg-primary hover:text-primary-foreground transition-colors">
               <Link href="/contact">
                 <Calendar className="mr-2 w-4 h-4" />
                 Book a Call
