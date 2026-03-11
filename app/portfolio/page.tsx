@@ -15,7 +15,7 @@ const mainCategories = ["All", "Thumbnails", "Video Editing", "Websites"]
 const thumbnailCategories = ["All Thumbnails", "Gaming", "Educational", "Podcast", "Finance / Business"]
 
 // Video subcategories  
-const videoCategories = ["All Videos", "Quiz / Interactive", "Podcast / Interview", "Gaming Content", "Explainer / Educational", "Short Form / Reels"]
+const videoCategories = ["All Videos", "Quiz / Interactive", "Head 2 Head", "Gaming Content", "Podcast", "Explainer / Educational", "Cooking"]
 
 // Thumbnail portfolio items with subcategories
 const thumbnailItems = [
@@ -37,73 +37,94 @@ const thumbnailItems = [
 const videoItems = [
   { 
     id: 1, 
-    title: "Interactive Quiz Show",
+    title: "ThinkFast! Quiz Show",
     subcategory: "Quiz / Interactive",
-    videoId: "dQw4w9WgXcQ", // Placeholder - replace with actual video IDs
+    videoId: "p-1GNbNp_yQ",
     description: "Quiz Editing – engaging visuals, timer animations, and score tracking overlays."
   },
   { 
     id: 2, 
-    title: "Trivia Challenge",
+    title: "ThinkFast! Trivia Challenge",
     subcategory: "Quiz / Interactive",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "WzsbUAie6w8",
     description: "Interactive editing with animated answer reveals and sound effects."
   },
   { 
     id: 3, 
-    title: "Business Insights Podcast",
-    subcategory: "Podcast / Interview",
-    videoId: "dQw4w9WgXcQ",
-    description: "Podcast Editing – clean cuts, pacing optimization, and audio balancing."
+    title: "Head 2 Head - Taresh Bhatia",
+    subcategory: "Head 2 Head",
+    videoId: "tcwPUQjY1kc",
+    description: "Head 2 Head format editing with dynamic transitions and engaging visuals."
   },
   { 
     id: 4, 
-    title: "Creator Interview",
-    subcategory: "Podcast / Interview",
-    videoId: "dQw4w9WgXcQ",
-    description: "Interview editing with smooth transitions and visual enhancements."
+    title: "Head 2 Head Debate",
+    subcategory: "Head 2 Head",
+    videoId: "DbsXI6oiGzs",
+    description: "Professional debate editing with split screens and reaction shots."
   },
   { 
     id: 5, 
-    title: "Gaming Highlights Reel",
+    title: "Captain Side Gaming",
     subcategory: "Gaming Content",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "l-HqjfoJQYg",
     description: "Gaming editing – fast cuts, zoom effects, and epic moment highlights."
   },
   { 
     id: 6, 
-    title: "Gameplay Commentary",
+    title: "Captain Side Gameplay",
     subcategory: "Gaming Content",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "60GPXc_zfhw",
     description: "Full gameplay edit with facecam integration and on-screen graphics."
   },
   { 
     id: 7, 
-    title: "Product Tutorial",
-    subcategory: "Explainer / Educational",
-    videoId: "dQw4w9WgXcQ",
-    description: "Explainer editing – motion graphics, step-by-step visuals, and clear narration sync."
+    title: "Sriram Benur Podcast",
+    subcategory: "Podcast",
+    videoId: "QsbvJ57OhJk",
+    description: "Podcast Editing – clean cuts, pacing optimization, and audio balancing."
   },
   { 
     id: 8, 
-    title: "Online Course Module",
-    subcategory: "Explainer / Educational",
-    videoId: "dQw4w9WgXcQ",
-    description: "Educational editing with animated diagrams and professional pacing."
+    title: "Gaming Podcast",
+    subcategory: "Podcast",
+    videoId: "zbcP72QFjXw",
+    description: "Gaming podcast editing with visual enhancements and smooth transitions."
   },
   { 
     id: 9, 
-    title: "Trending Reel Edit",
-    subcategory: "Short Form / Reels",
-    videoId: "dQw4w9WgXcQ",
-    description: "Short form editing – punchy cuts, trending transitions, and hook optimization."
+    title: "Explainer Video",
+    subcategory: "Explainer / Educational",
+    videoId: "6v1lB5GP5AM",
+    description: "Explainer editing – motion graphics, step-by-step visuals, and clear narration sync."
   },
   { 
     id: 10, 
-    title: "Viral Shorts",
-    subcategory: "Short Form / Reels",
-    videoId: "dQw4w9WgXcQ",
-    description: "Reels editing with captions, effects, and attention-grabbing edits."
+    title: "Product Explainer",
+    subcategory: "Explainer / Educational",
+    videoId: "m6GGUdU8sVA",
+    description: "Professional explainer video with animated diagrams and engaging visuals."
+  },
+  { 
+    id: 11, 
+    title: "Educational Content - Sunil Yadav",
+    subcategory: "Explainer / Educational",
+    videoId: "3csIOSBv8a8",
+    description: "Educational editing with clear explanations and visual aids."
+  },
+  { 
+    id: 12, 
+    title: "Head 2 Head Educational",
+    subcategory: "Explainer / Educational",
+    videoId: "bYaE3JE6pOk",
+    description: "Educational content with head 2 head format and engaging presentation."
+  },
+  { 
+    id: 13, 
+    title: "Cooking Video",
+    subcategory: "Cooking",
+    videoId: "g4tFGiUS3qs",
+    description: "Cooking video editing with smooth transitions, close-ups, and appetizing visuals."
   },
 ]
 
