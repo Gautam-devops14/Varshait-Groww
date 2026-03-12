@@ -12,13 +12,32 @@ import { Button } from "@/components/ui/button"
 const mainCategories = ["All", "Thumbnails", "Video Editing", "Websites"]
 
 // Thumbnail subcategories
-const thumbnailCategories = ["All Thumbnails"]
+const thumbnailCategories = ["All Thumbnails", "Finance", "Food", "Entertainment", "Health", "Gaming", "Documentary"]
 
 // Video subcategories  
 const videoCategories = ["All Videos", "Quiz / Interactive", "Head 2 Head", "Gaming Content", "Podcast", "Explainer / Educational", "Cooking", "Fitness"]
 
-// Thumbnail portfolio items - placeholder until real thumbnails are added
-const thumbnailItems: { id: number; title: string; subcategory: string; caption: string; color: string; image?: string }[] = []
+// Thumbnail portfolio items
+const thumbnailItems = [
+  { id: 1, title: "Fix Before You Invest", subcategory: "Finance", caption: "Finance Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1st-thumb-93hxw59OklVzp0ry15xJ0DlyBU6j8j.jpeg" },
+  { id: 2, title: "Don't Fall in Trap", subcategory: "Finance", caption: "Finance Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2nd-thumb-uoj3iP17V2d8xPeOKbxAa24U5LHjoP.jpeg" },
+  { id: 3, title: "Why Traders Fail", subcategory: "Finance", caption: "Finance Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3th-YfKe36kmczKg1YvBNChVV6EwkSHGr5.jpeg" },
+  { id: 4, title: "Why Traders Fail", subcategory: "Finance", caption: "Finance Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4th-EPw76FkVpbB02LPqWvgEazzQrjQpRU.jpeg" },
+  { id: 5, title: "Why Traders Fail", subcategory: "Finance", caption: "Finance Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5th-bkC0NphD2SwMrvBlkXjKcRpCM21mrz.jpeg" },
+  { id: 6, title: "Why 90% Traders Fail", subcategory: "Finance", caption: "Finance Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/6th-zvBWYpxVKMl9Z8qXuKAOvg3pgc4jAF.jpeg" },
+  { id: 7, title: "Smashed Baby Potato", subcategory: "Food", caption: "Food Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7th-D8ZI61msr2kpftXMd5RjuBtdfWQDFn.jpeg" },
+  { id: 8, title: "Crispy Smashed Potato", subcategory: "Food", caption: "Food Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8th-7WYdsqwqz81DN4iSxJ8R3b0nbBHSCc.jpeg" },
+  { id: 9, title: "Mini Cookies Recipe", subcategory: "Food", caption: "Food Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/9th-hscbKkSbdruMF0pAnj2RM5monpzXC3.jpeg" },
+  { id: 10, title: "Roasted Tomato Soup", subcategory: "Food", caption: "Food Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/10th-GnloakwXaaUKiI4izkb5ZEBTRik87a.jpeg" },
+  { id: 11, title: "Chole Kulche Recipe", subcategory: "Food", caption: "Food Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11-MV7JCuZ4xYOKj3jLt4VEc4Na3Keddi.jpeg" },
+  { id: 12, title: "Shinchan Not in Prime", subcategory: "Entertainment", caption: "Entertainment Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/12-ZS1AdUB1uh0sVTnEAeLQg6RFoI1ImL.webp" },
+  { id: 13, title: "Extreme Dares", subcategory: "Entertainment", caption: "Entertainment Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/13-1eYPrf90Bzc2ZoTvPpLxFx84Lh3gC4.webp" },
+  { id: 14, title: "Weight Loss Tips", subcategory: "Health", caption: "Health Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14-PwqcJyY3Od1Qxse5aodSXu0LNy9MRn.webp" },
+  { id: 15, title: "Blood Sugar Foods", subcategory: "Health", caption: "Health Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/15-L9dtzdZPDm4hGd3u7aJnDafJpdZRkd.jpeg" },
+  { id: 16, title: "Would You Rather", subcategory: "Gaming", caption: "Gaming Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/16-E6z9RuZgsJXjJ2C5UptPTCcEzzyVtk.webp" },
+  { id: 17, title: "Mystery of Ayodhya", subcategory: "Documentary", caption: "Documentary Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/17-9BPNoHgopqrzaMb38PE7JXYgJyGz9R.webp" },
+  { id: 18, title: "California Burrito Story", subcategory: "Finance", caption: "Business Thumbnail", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/18-PHSWh1uym29DoMr67bpmdj7q5fSwLo.webp" },
+]
 
 // Video portfolio items with YouTube embeds
 const videoItems = [
@@ -406,13 +425,16 @@ export default function PortfolioPage() {
                   <X className="w-5 h-5 text-white" />
                 </button>
                 
-                <div className={`aspect-video rounded-2xl bg-gradient-to-br ${selectedThumbnail.color} shadow-2xl overflow-hidden`}>
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzR2LTRoLTJ2NGgtNHYyaDR2NGgydi00aDR2LTJoLTR6bTAtMzBWMGgtMnY0aC00djJoNHY0aDJWNmg0VjRoLTR6TTYgMzR2LTRINHY0SDB2Mmg0djRoMnYtNGg0di0ySDZ6TTYgNFYwSDR2NEgwdjJoNHY0aDJWNmg0VjRINnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30" />
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-white font-display font-bold text-2xl md:text-4xl text-center px-4 drop-shadow-lg">
-                      {selectedThumbnail.title}
-                    </span>
-                  </div>
+                <div className="aspect-video rounded-2xl shadow-2xl overflow-hidden">
+                  {selectedThumbnail.image ? (
+                    <img src={selectedThumbnail.image} alt={selectedThumbnail.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className={`w-full h-full bg-gradient-to-br ${selectedThumbnail.color || 'from-gray-500 to-gray-600'} flex items-center justify-center`}>
+                      <span className="text-white font-display font-bold text-2xl md:text-4xl text-center px-4 drop-shadow-lg">
+                        {selectedThumbnail.title}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="mt-4 text-center">
