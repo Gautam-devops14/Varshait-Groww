@@ -6,22 +6,15 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
-import { Mail, Phone, MessageCircle, Clock, Send, CheckCircle } from "lucide-react"
+import { Mail, Clock, Send, CheckCircle } from "lucide-react"
 
 const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
     description: "Send us an email anytime",
-    value: "hello@varshait.com",
-    href: "mailto:hello@varshait.com",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    description: "Chat with us directly",
-    value: "Message on WhatsApp",
-    href: "https://wa.me/919876543210?text=Hi%20VARSHAIT!%20I%27m%20interested%20in%20your%20services.",
+    value: "sales@growwithvarshait.online",
+    href: "mailto:sales@growwithvarshait.online",
   },
   {
     icon: Clock,
@@ -88,7 +81,7 @@ export default function ContactPage() {
 
         {/* Contact Methods */}
         <section className="container mx-auto px-4 lg:px-8 pb-16">
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={method.title}
@@ -269,41 +262,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* WhatsApp CTA */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-12 text-center text-white"
-            >
-              <MessageCircle className="w-16 h-16 mx-auto mb-6 opacity-90" />
-              <h2 className="font-display text-3xl lg:text-4xl font-bold mb-4">
-                Prefer to Chat?
-              </h2>
-              <p className="text-white/80 max-w-xl mx-auto mb-8">
-                Get instant responses on WhatsApp. We are available to answer your questions 
-                and discuss your project in real-time.
-              </p>
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-white text-green-600 hover:bg-white/90 rounded-full px-8 h-12"
-              >
-                <a 
-                  href="https://wa.me/919876543210?text=Hi%20VARSHAIT!%20I%27m%20interested%20in%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  Chat on WhatsApp
-                </a>
-              </Button>
-            </motion.div>
-          </div>
-        </section>
+
       </main>
       <Footer />
     </>

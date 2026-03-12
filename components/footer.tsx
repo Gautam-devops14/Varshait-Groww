@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, Instagram, Youtube, Linkedin, Facebook } from "lucide-react"
+import { Mail } from "lucide-react"
 
 const footerLinks = {
   services: [
@@ -30,36 +30,6 @@ export function Footer() {
               Professional creative studio helping creators and businesses build 
               a strong digital presence through design and media.
             </p>
-            <div className="flex gap-4 mt-6">
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Services */}
@@ -102,20 +72,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a 
-                  href="mailto:hello@varshait.com"
+                  href="mailto:sales@growwithvarshait.online"
                   className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  hello@varshait.com
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://wa.me/919876543210"
-                  className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  WhatsApp Us
+                  sales@growwithvarshait.online
                 </a>
               </li>
             </ul>

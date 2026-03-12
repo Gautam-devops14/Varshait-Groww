@@ -5,143 +5,118 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CTASection } from "@/components/sections/cta"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, ExternalLink, Monitor, Smartphone } from "lucide-react"
+import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
 const mainCategories = ["All", "Thumbnails", "Video Editing", "Websites"]
 
 // Thumbnail subcategories
-const thumbnailCategories = ["All Thumbnails", "Gaming", "Educational", "Podcast", "Finance / Business"]
+const thumbnailCategories = ["All Thumbnails"]
 
 // Video subcategories  
-const videoCategories = ["All Videos", "Quiz / Interactive", "Podcast / Interview", "Gaming Content", "Explainer / Educational", "Short Form / Reels"]
+const videoCategories = ["All Videos", "Quiz / Interactive", "Head 2 Head", "Gaming Content", "Podcast", "Explainer / Educational", "Cooking"]
 
-// Thumbnail portfolio items with subcategories
-const thumbnailItems = [
-  { id: 1, title: "Epic Gaming Moments", subcategory: "Gaming", caption: "High CTR YouTube Thumbnail Design", color: "from-purple-600 to-pink-500" },
-  { id: 2, title: "Battle Royale Highlights", subcategory: "Gaming", caption: "High CTR YouTube Thumbnail Design", color: "from-red-500 to-orange-500" },
-  { id: 3, title: "Minecraft Build Challenge", subcategory: "Gaming", caption: "High CTR YouTube Thumbnail Design", color: "from-green-500 to-emerald-500" },
-  { id: 4, title: "Learn Python Basics", subcategory: "Educational", caption: "High CTR YouTube Thumbnail Design", color: "from-blue-500 to-cyan-500" },
-  { id: 5, title: "Math Made Easy", subcategory: "Educational", caption: "High CTR YouTube Thumbnail Design", color: "from-indigo-500 to-purple-500" },
-  { id: 6, title: "History Documentary", subcategory: "Educational", caption: "High CTR YouTube Thumbnail Design", color: "from-amber-500 to-orange-500" },
-  { id: 7, title: "Tech Talk Episode", subcategory: "Podcast", caption: "High CTR YouTube Thumbnail Design", color: "from-slate-600 to-zinc-500" },
-  { id: 8, title: "Entrepreneur Stories", subcategory: "Podcast", caption: "High CTR YouTube Thumbnail Design", color: "from-teal-500 to-cyan-500" },
-  { id: 9, title: "Stock Market Analysis", subcategory: "Finance / Business", caption: "High CTR YouTube Thumbnail Design", color: "from-green-600 to-emerald-500" },
-  { id: 10, title: "Crypto Explained", subcategory: "Finance / Business", caption: "High CTR YouTube Thumbnail Design", color: "from-yellow-500 to-orange-500" },
-  { id: 11, title: "Real Estate Tips", subcategory: "Finance / Business", caption: "High CTR YouTube Thumbnail Design", color: "from-blue-600 to-indigo-500" },
-  { id: 12, title: "Budget Planning Guide", subcategory: "Finance / Business", caption: "High CTR YouTube Thumbnail Design", color: "from-emerald-500 to-teal-500" },
-]
+// Thumbnail portfolio items - placeholder until real thumbnails are added
+const thumbnailItems: { id: number; title: string; subcategory: string; caption: string; color: string; image?: string }[] = []
 
 // Video portfolio items with YouTube embeds
 const videoItems = [
   { 
     id: 1, 
-    title: "Interactive Quiz Show",
+    title: "ThinkFast! Quiz Show",
     subcategory: "Quiz / Interactive",
-    videoId: "dQw4w9WgXcQ", // Placeholder - replace with actual video IDs
+    videoId: "p-1GNbNp_yQ",
     description: "Quiz Editing – engaging visuals, timer animations, and score tracking overlays."
   },
   { 
     id: 2, 
-    title: "Trivia Challenge",
+    title: "ThinkFast! Trivia Challenge",
     subcategory: "Quiz / Interactive",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "WzsbUAie6w8",
     description: "Interactive editing with animated answer reveals and sound effects."
   },
   { 
     id: 3, 
-    title: "Business Insights Podcast",
-    subcategory: "Podcast / Interview",
-    videoId: "dQw4w9WgXcQ",
-    description: "Podcast Editing – clean cuts, pacing optimization, and audio balancing."
+    title: "Head 2 Head - Taresh Bhatia",
+    subcategory: "Head 2 Head",
+    videoId: "tcwPUQjY1kc",
+    description: "Head 2 Head format editing with dynamic transitions and engaging visuals."
   },
   { 
     id: 4, 
-    title: "Creator Interview",
-    subcategory: "Podcast / Interview",
-    videoId: "dQw4w9WgXcQ",
-    description: "Interview editing with smooth transitions and visual enhancements."
+    title: "Head 2 Head Debate",
+    subcategory: "Head 2 Head",
+    videoId: "DbsXI6oiGzs",
+    description: "Professional debate editing with split screens and reaction shots."
   },
   { 
     id: 5, 
-    title: "Gaming Highlights Reel",
+    title: "Captain Side Gaming",
     subcategory: "Gaming Content",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "l-HqjfoJQYg",
     description: "Gaming editing – fast cuts, zoom effects, and epic moment highlights."
   },
   { 
     id: 6, 
-    title: "Gameplay Commentary",
+    title: "Captain Side Gameplay",
     subcategory: "Gaming Content",
-    videoId: "dQw4w9WgXcQ",
+    videoId: "60GPXc_zfhw",
     description: "Full gameplay edit with facecam integration and on-screen graphics."
   },
   { 
     id: 7, 
-    title: "Product Tutorial",
-    subcategory: "Explainer / Educational",
-    videoId: "dQw4w9WgXcQ",
-    description: "Explainer editing – motion graphics, step-by-step visuals, and clear narration sync."
+    title: "Sriram Benur Podcast",
+    subcategory: "Podcast",
+    videoId: "QsbvJ57OhJk",
+    description: "Podcast Editing – clean cuts, pacing optimization, and audio balancing."
   },
   { 
     id: 8, 
-    title: "Online Course Module",
-    subcategory: "Explainer / Educational",
-    videoId: "dQw4w9WgXcQ",
-    description: "Educational editing with animated diagrams and professional pacing."
+    title: "Gaming Podcast",
+    subcategory: "Podcast",
+    videoId: "zbcP72QFjXw",
+    description: "Gaming podcast editing with visual enhancements and smooth transitions."
   },
   { 
     id: 9, 
-    title: "Trending Reel Edit",
-    subcategory: "Short Form / Reels",
-    videoId: "dQw4w9WgXcQ",
-    description: "Short form editing – punchy cuts, trending transitions, and hook optimization."
+    title: "Explainer Video",
+    subcategory: "Explainer / Educational",
+    videoId: "6v1lB5GP5AM",
+    description: "Explainer editing – motion graphics, step-by-step visuals, and clear narration sync."
   },
   { 
     id: 10, 
-    title: "Viral Shorts",
-    subcategory: "Short Form / Reels",
-    videoId: "dQw4w9WgXcQ",
-    description: "Reels editing with captions, effects, and attention-grabbing edits."
+    title: "Product Explainer",
+    subcategory: "Explainer / Educational",
+    videoId: "m6GGUdU8sVA",
+    description: "Professional explainer video with animated diagrams and engaging visuals."
+  },
+  { 
+    id: 11, 
+    title: "Educational Content - Sunil Yadav",
+    subcategory: "Explainer / Educational",
+    videoId: "3csIOSBv8a8",
+    description: "Educational editing with clear explanations and visual aids."
+  },
+  { 
+    id: 12, 
+    title: "Head 2 Head Educational",
+    subcategory: "Explainer / Educational",
+    videoId: "bYaE3JE6pOk",
+    description: "Educational content with head 2 head format and engaging presentation."
+  },
+  { 
+    id: 13, 
+    title: "Cooking Video",
+    subcategory: "Cooking",
+    videoId: "g4tFGiUS3qs",
+    description: "Cooking video editing with smooth transitions, close-ups, and appetizing visuals."
   },
 ]
 
-// Website portfolio items
-const websiteItems = [
-  {
-    id: 1,
-    title: "SaaS Landing Page",
-    description: "Modern, conversion-focused landing page for a B2B SaaS startup.",
-    desktopColor: "from-blue-500 to-indigo-600",
-    mobileColor: "from-blue-400 to-indigo-500",
-    liveUrl: "#",
-  },
-  {
-    id: 2,
-    title: "E-commerce Store",
-    description: "Full e-commerce website with custom product pages and checkout.",
-    desktopColor: "from-green-500 to-emerald-600",
-    mobileColor: "from-green-400 to-emerald-500",
-    liveUrl: "#",
-  },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    description: "Creative portfolio for a digital artist with gallery and contact.",
-    desktopColor: "from-purple-500 to-pink-600",
-    mobileColor: "from-purple-400 to-pink-500",
-    liveUrl: "#",
-  },
-  {
-    id: 4,
-    title: "Restaurant Website",
-    description: "Elegant restaurant site with menu, reservations, and location.",
-    desktopColor: "from-orange-500 to-red-600",
-    mobileColor: "from-orange-400 to-red-500",
-    liveUrl: "#",
-  },
-]
+// Website portfolio items - Coming Soon
+const websiteItems: { id: number; title: string; description: string; desktopColor: string; mobileColor: string; liveUrl: string }[] = []
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -214,66 +189,88 @@ export default function PortfolioPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="font-display text-2xl lg:text-3xl font-bold mb-6">
-                Thumbnail Design
-              </h2>
+              <div className="flex items-center gap-4 mb-6">
+                <h2 className="font-display text-2xl lg:text-3xl font-bold">
+                  Thumbnail Design
+                </h2>
+                {thumbnailItems.length === 0 && (
+                  <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+                    Coming Soon
+                  </span>
+                )}
+              </div>
               
-              {/* Thumbnail Subcategory Filter */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {thumbnailCategories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setThumbnailFilter(cat)}
-                    className={cn(
-                      "px-4 py-2 rounded-full text-xs font-medium transition-all duration-300",
-                      thumbnailFilter === cat
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary text-muted-foreground hover:bg-secondary/80"
-                    )}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-
-              {/* Thumbnail Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <AnimatePresence mode="popLayout">
-                  {filteredThumbnails.map((item, index) => (
-                    <motion.div
-                      key={item.id}
-                      layout
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 0.3, delay: index * 0.03 }}
-                    >
+              {thumbnailItems.length > 0 ? (
+                <>
+                  {/* Thumbnail Subcategory Filter */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {thumbnailCategories.map((cat) => (
                       <button
-                        onClick={() => setSelectedThumbnail(item)}
-                        className="group block w-full text-left"
+                        key={cat}
+                        onClick={() => setThumbnailFilter(cat)}
+                        className={cn(
+                          "px-4 py-2 rounded-full text-xs font-medium transition-all duration-300",
+                          thumbnailFilter === cat
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary text-muted-foreground hover:bg-secondary/80"
+                        )}
                       >
-                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-                          <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
-                          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzR2LTRoLTJ2NGgtNHYyaDR2NGgydi00aDR2LTJoLTR6bTAtMzBWMGgtMnY0aC00djJoNHY0aDJWNmg0VjRoLTR6TTYgMzR2LTRINHY0SDB2Mmg0djRoMnYtNGg0di0ySDZ6TTYgNFYwSDR2NEgwdjJoNHY0aDJWNmg0VjRINnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30" />
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <span className="text-white font-display font-bold text-sm md:text-base text-center px-2 drop-shadow-lg">
-                              {item.title}
-                            </span>
-                          </div>
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                            <span className="text-white font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 px-3 py-1 rounded-full">
-                              View Larger
-                            </span>
-                          </div>
-                        </div>
-                        <p className="text-xs text-muted-foreground mt-2 text-center">
-                          {item.caption}
-                        </p>
+                        {cat}
                       </button>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
+                    ))}
+                  </div>
+
+                  {/* Thumbnail Grid */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <AnimatePresence mode="popLayout">
+                      {filteredThumbnails.map((item, index) => (
+                        <motion.div
+                          key={item.id}
+                          layout
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.9 }}
+                          transition={{ duration: 0.3, delay: index * 0.03 }}
+                        >
+                          <button
+                            onClick={() => setSelectedThumbnail(item)}
+                            className="group block w-full text-left"
+                          >
+                            <div className="relative aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                              {item.image ? (
+                                <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover" />
+                              ) : (
+                                <>
+                                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
+                                  <div className="absolute inset-0 flex items-center justify-center">
+                                    <span className="text-white font-display font-bold text-sm md:text-base text-center px-2 drop-shadow-lg">
+                                      {item.title}
+                                    </span>
+                                  </div>
+                                </>
+                              )}
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span className="text-white font-medium text-sm opacity-0 group-hover:opacity-100 transition-opacity bg-black/50 px-3 py-1 rounded-full">
+                                  View Larger
+                                </span>
+                              </div>
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-2 text-center">
+                              {item.caption}
+                            </p>
+                          </button>
+                        </motion.div>
+                      ))}
+                    </AnimatePresence>
+                  </div>
+                </>
+              ) : (
+                <div className="bg-card rounded-2xl border border-border p-12 text-center">
+                  <p className="text-muted-foreground">
+                    Our thumbnail portfolio is being updated. Check back soon to see our work!
+                  </p>
+                </div>
+              )}
             </motion.div>
           </section>
         )}
@@ -368,67 +365,10 @@ export default function PortfolioPage() {
                 </span>
               </div>
 
-              {/* Website Cards */}
-              <div className="grid md:grid-cols-2 gap-8">
-                {websiteItems.map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-card rounded-2xl overflow-hidden border border-border"
-                  >
-                    {/* Screenshots Preview */}
-                    <div className="p-6 bg-secondary/30">
-                      <div className="flex gap-4 items-end justify-center">
-                        {/* Desktop Screenshot */}
-                        <div className="relative flex-1 max-w-[280px]">
-                          <div className="flex items-center gap-2 mb-2">
-                            <Monitor className="w-4 h-4 text-muted-foreground" />
-                            <span className="text-xs text-muted-foreground">Desktop</span>
-                          </div>
-                          <div className={`aspect-[16/10] rounded-lg bg-gradient-to-br ${item.desktopColor} shadow-lg`}>
-                            <div className="w-full h-full flex items-center justify-center">
-                              <span className="text-white/80 text-xs font-medium">Desktop Preview</span>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Mobile Screenshot */}
-                        <div className="relative w-16">
-                          <div className="flex items-center gap-1 mb-2">
-                            <Smartphone className="w-3 h-3 text-muted-foreground" />
-                            <span className="text-[10px] text-muted-foreground">Mobile</span>
-                          </div>
-                          <div className={`aspect-[9/16] rounded-lg bg-gradient-to-br ${item.mobileColor} shadow-lg`}>
-                            <div className="w-full h-full flex items-center justify-center">
-                              <span className="text-white/80 text-[8px] font-medium">Mobile</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Info */}
-                    <div className="p-5">
-                      <h3 className="font-display font-semibold text-lg mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {item.description}
-                      </p>
-                      {item.liveUrl !== "#" && (
-                        <Button asChild variant="outline" size="sm" className="rounded-full">
-                          <a href={item.liveUrl} target="_blank" rel="noopener noreferrer">
-                            View Website
-                            <ExternalLink className="ml-2 w-3 h-3" />
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
+              <div className="bg-card rounded-2xl border border-border p-12 text-center">
+                <p className="text-muted-foreground">
+                  Our website design services are launching soon. Contact us for custom website projects!
+                </p>
               </div>
             </motion.div>
           </section>
