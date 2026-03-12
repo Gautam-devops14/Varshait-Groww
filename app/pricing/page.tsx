@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Video, ImageIcon, Film, ArrowRight, MessageCircle } from "lucide-react"
+import { Video, ImageIcon, Film, ArrowRight, Mail } from "lucide-react"
 
 const pricingItems = [
   {
@@ -129,14 +129,13 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
                 <Link href="/contact">
-                  <MessageCircle className="mr-2 w-5 h-5" />
                   Contact Us
                 </Link>
               </Button>
-              <Button asChild size="lg" className="rounded-full px-8 bg-[#25D366] hover:bg-[#25D366]/90 text-white">
-                <a href="https://wa.me/919876543210?text=Hi%20VARSHAIT!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  Chat on WhatsApp
+              <Button asChild size="lg" className="rounded-full px-8 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors">
+                <a href="mailto:gmkicoding159@gmail.com">
+                  <Mail className="mr-2 w-5 h-5" />
+                  Email Us
                 </a>
               </Button>
             </div>

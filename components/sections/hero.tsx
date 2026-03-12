@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, MessageCircle } from "lucide-react"
+import { ArrowRight, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
@@ -35,10 +35,10 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" className="bg-[#25D366] hover:bg-[#25D366]/90 text-white rounded-full px-8 h-12">
-              <a href="https://wa.me/919876543210?text=Hi%20VARSHAIT!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 w-4 h-4" />
-                Chat on WhatsApp
+            <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12 hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a href="mailto:gmkicoding159@gmail.com">
+                <Mail className="mr-2 w-4 h-4" />
+                Email Us
               </a>
             </Button>
           </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MessageCircle } from "lucide-react"
+import { Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function CTASection() {
@@ -38,18 +38,17 @@ export function CTASection() {
                 className="rounded-full px-8 h-12"
               >
                 <Link href="/contact">
-                  <MessageCircle className="mr-2 w-5 h-5" />
                   Contact Us
                 </Link>
               </Button>
               <Button 
                 asChild 
                 size="lg" 
-                className="rounded-full px-8 h-12 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                className="rounded-full px-8 h-12 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
               >
-                <a href="https://wa.me/919876543210?text=Hi%20VARSHAIT!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 w-5 h-5" />
-                  Chat on WhatsApp
+                <a href="mailto:gmkicoding159@gmail.com">
+                  <Mail className="mr-2 w-5 h-5" />
+                  Email Us
                 </a>
               </Button>
             </div>

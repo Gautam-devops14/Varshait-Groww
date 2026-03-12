@@ -13,8 +13,8 @@ const contactMethods = [
     icon: Mail,
     title: "Email Us",
     description: "Send us an email anytime",
-    value: "sales@growwithvarshait.online",
-    href: "mailto:sales@growwithvarshait.online",
+    value: "gmkicoding159@gmail.com",
+    href: "mailto:gmkicoding159@gmail.com",
   },
   {
     icon: Clock,
