@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Video, ImageIcon, Film, ArrowRight, MessageCircle, Calendar } from "lucide-react"
+import { Video, ImageIcon, Film, ArrowRight, MessageCircle } from "lucide-react"
 
 const pricingItems = [
   {
@@ -133,11 +133,11 @@ export default function PricingPage() {
                   Contact Us
                 </Link>
               </Button>
-              <Button asChild size="lg" className="rounded-full px-8 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors">
-                <Link href="/contact">
-                  <Calendar className="mr-2 w-5 h-5" />
-                  Book a Meeting
-                </Link>
+              <Button asChild size="lg" className="rounded-full px-8 bg-[#25D366] hover:bg-[#25D366]/90 text-white">
+                <a href="https://wa.me/919876543210?text=Hi%20VARSHAIT!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Chat on WhatsApp
+                </a>
               </Button>
             </div>
           </motion.div>
