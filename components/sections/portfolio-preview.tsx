@@ -5,36 +5,37 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 
-const portfolioItems = [
+// Featured videos to show on home page
+const featuredVideos = [
   {
-    title: "Tech Review Channel",
-    category: "Thumbnail Design",
-    color: "from-orange-500 to-red-500",
+    title: "ThinkFast! Quiz Show",
+    category: "Quiz / Interactive",
+    videoId: "p-1GNbNp_yQ",
   },
   {
-    title: "Fitness Coach",
-    category: "Video Editing",
-    color: "from-blue-500 to-cyan-500",
+    title: "Head 2 Head - Taresh Bhatia",
+    category: "Head 2 Head",
+    videoId: "tcwPUQjY1kc",
   },
   {
-    title: "Business Website",
-    category: "Website Design",
-    color: "from-green-500 to-emerald-500",
+    title: "Captain Side Gaming",
+    category: "Gaming Content",
+    videoId: "l-HqjfoJQYg",
   },
   {
-    title: "Gaming Channel",
-    category: "Thumbnail Design",
-    color: "from-purple-500 to-pink-500",
+    title: "Sriram Benur Podcast",
+    category: "Podcast",
+    videoId: "QsbvJ57OhJk",
   },
   {
-    title: "Educational Content",
-    category: "Video Editing",
-    color: "from-amber-500 to-orange-500",
+    title: "Explainer Video",
+    category: "Explainer / Educational",
+    videoId: "6v1lB5GP5AM",
   },
   {
-    title: "E-commerce Store",
-    category: "Website Design",
-    color: "from-teal-500 to-green-500",
+    title: "Fitness Video",
+    category: "Fitness",
+    videoId: "_Z5NvSiH0X0",
   },
 ]
 
@@ -57,7 +58,7 @@ export function PortfolioPreview() {
               Recent Projects
             </h2>
           </div>
-          <Button asChild variant="outline" className="rounded-full w-fit">
+          <Button asChild variant="outline" className="rounded-full w-fit hover:bg-primary hover:text-primary-foreground transition-colors">
             <Link href="/portfolio">
               View All Work
               <ArrowRight className="ml-2 w-4 h-4" />
@@ -66,31 +67,32 @@ export function PortfolioPreview() {
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioItems.map((item, index) => (
+          {featuredVideos.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-background rounded-2xl overflow-hidden border border-border shadow-sm"
             >
-              <Link href="/portfolio" className="group block">
-                <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br shadow-lg">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-90`} />
-                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzR2LTRoLTJ2NGgtNHYyaDR2NGgydi00aDR2LTJoLTR6bTAtMzBWMGgtMnY0aC00djJoNHY0aDJWNmg0VjRoLTR6TTYgMzR2LTRINHY0SDB2Mmg0djRoMnYtNGg0di0ySDZ6TTYgNFYwSDR2NEgwdjJoNHY0aDJWNmg0VjRINnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30" />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
-                    <span className="text-white font-medium">View Project</span>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <span className="text-xs font-medium text-accent uppercase tracking-wide">
-                    {item.category}
-                  </span>
-                  <h3 className="font-display font-semibold text-lg mt-1 group-hover:text-accent transition-colors">
-                    {item.title}
-                  </h3>
-                </div>
-              </Link>
+              <div className="aspect-video">
+                <iframe
+                  src={`https://www.youtube.com/embed/${item.videoId}`}
+                  title={item.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <div className="p-4">
+                <span className="text-xs font-medium text-accent uppercase tracking-wide">
+                  {item.category}
+                </span>
+                <h3 className="font-display font-semibold text-lg mt-1">
+                  {item.title}
+                </h3>
+              </div>
             </motion.div>
           ))}
         </div>

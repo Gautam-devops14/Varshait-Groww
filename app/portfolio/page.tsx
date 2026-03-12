@@ -15,7 +15,7 @@ const mainCategories = ["All", "Thumbnails", "Video Editing", "Websites"]
 const thumbnailCategories = ["All Thumbnails"]
 
 // Video subcategories  
-const videoCategories = ["All Videos", "Quiz / Interactive", "Head 2 Head", "Gaming Content", "Podcast", "Explainer / Educational", "Cooking"]
+const videoCategories = ["All Videos", "Quiz / Interactive", "Head 2 Head", "Gaming Content", "Podcast", "Explainer / Educational", "Cooking", "Fitness"]
 
 // Thumbnail portfolio items - placeholder until real thumbnails are added
 const thumbnailItems: { id: number; title: string; subcategory: string; caption: string; color: string; image?: string }[] = []
@@ -112,6 +112,13 @@ const videoItems = [
     subcategory: "Cooking",
     videoId: "g4tFGiUS3qs",
     description: "Cooking video editing with smooth transitions, close-ups, and appetizing visuals."
+  },
+  { 
+    id: 14, 
+    title: "Fitness Video",
+    subcategory: "Fitness",
+    videoId: "_Z5NvSiH0X0",
+    description: "Fitness video editing with energetic cuts, workout overlays, and motivational visuals."
   },
 ]
 
