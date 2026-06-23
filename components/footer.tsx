@@ -72,11 +72,11 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a 
-                  href="mailto:sales@growwithvarshait.online"
+                  href="mailto:gmkicoding159@gmail.com"
                   className="flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  sales@growwithvarshait.online
+                  gmkicoding159@gmail.com
                 </a>
               </li>
             </ul>

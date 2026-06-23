@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Video, ImageIcon, Film, ArrowRight, MessageCircle, Calendar } from "lucide-react"
+import { Video, ImageIcon, Film, ArrowRight, Mail } from "lucide-react"
 
 const pricingItems = [
   {
@@ -129,15 +129,14 @@ export default function PricingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="rounded-full px-8">
                 <Link href="/contact">
-                  <MessageCircle className="mr-2 w-5 h-5" />
                   Contact Us
                 </Link>
               </Button>
               <Button asChild size="lg" className="rounded-full px-8 bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors">
-                <Link href="/contact">
-                  <Calendar className="mr-2 w-5 h-5" />
-                  Book a Meeting
-                </Link>
+                <a href="mailto:gmkicoding159@gmail.com">
+                  <Mail className="mr-2 w-5 h-5" />
+                  Email Us
+                </a>
               </Button>
             </div>
           </motion.div>

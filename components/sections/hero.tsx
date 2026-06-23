@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar } from "lucide-react"
+import { ArrowRight, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
@@ -36,10 +36,10 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12 hover:bg-primary hover:text-primary-foreground transition-colors">
-              <Link href="/contact">
-                <Calendar className="mr-2 w-4 h-4" />
-                Book a Call
-              </Link>
+              <a href="mailto:gmkicoding159@gmail.com">
+                <Mail className="mr-2 w-4 h-4" />
+                Email Us
+              </a>
             </Button>
           </div>
           
