@@ -37,7 +37,7 @@ export function CTASection() {
                 variant="secondary"
                 className="rounded-full px-8 h-12"
               >
-                <Link href="/contact">
+                <Link href="https://calendly.com/varshaittrade/30min">
                   Contact Us
                 </Link>
               </Button>
