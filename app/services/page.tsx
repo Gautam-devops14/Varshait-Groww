@@ -209,7 +209,7 @@ export default function ServicesPage() {
                   </div>
 
                   <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8">
-                    <Link href="/contact">
+                    <Link href="https://calendly.com/varshaittrade/30min">
                       Get Started
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </Link>
