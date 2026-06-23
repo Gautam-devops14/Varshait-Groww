@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
-import { Mail, Clock, Send, CheckCircle } from "lucide-react"
+import { Mail, Clock, Send, CheckCircle, Calendar } from "lucide-react"
 
 const contactMethods = [
   {
@@ -17,11 +17,11 @@ const contactMethods = [
     href: "mailto:gmkicoding159@gmail.com",
   },
   {
-    icon: Clock,
-    title: "Response Time",
-    description: "We typically respond within",
-    value: "24 hours",
-    href: null,
+    icon: Calendar,
+    title: "Book a Meeting",
+    description: "Schedule a 30-min call",
+    value: "Calendly",
+    href: "https://calendly.com/varshaittrade/30min",
   },
 ]
 
