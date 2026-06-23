@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Video, ImageIcon, Film, ArrowRight, Mail } from "lucide-react"
+import { Video, ImageIcon, Film, ArrowRight, Mail, MessageCircle } from "lucide-react"
 
 const pricingItems = [
   {
