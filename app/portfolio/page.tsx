@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import dynamic from "next/dynamic"
 
 const mainCategories = ["All", "Thumbnails", "Video Editing", "Websites"]
 
@@ -145,7 +146,7 @@ const videoItems = [
 // Website portfolio items - Coming Soon
 const websiteItems: { id: number; title: string; description: string; desktopColor: string; mobileColor: string; liveUrl: string }[] = []
 
-export default function PortfolioPage() {
+function PortfolioContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   
@@ -508,5 +509,19 @@ export default function PortfolioPage() {
       </main>
       <Footer />
     </>
+  )
+}
+
+export default function PortfolioPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-muted-foreground">Loading portfolio...</p>
+        </div>
+      </div>
+    }>
+      <PortfolioContent />
+    </Suspense>
   )
 }
