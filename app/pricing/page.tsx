@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Video, ImageIcon, Film, ArrowRight, Mail, MessageCircle } from "lucide-react"
+import { Video, ImageIcon, Film, ArrowRight, Mail } from "lucide-react"
 
 const pricingItems = [
   {
@@ -188,7 +188,7 @@ export default function PricingPage() {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <MessageCircle className="w-12 h-12 text-accent mx-auto mb-4" />
+              <Mail className="w-12 h-12 text-accent mx-auto mb-4" />
               <h3 className="font-display text-2xl lg:text-3xl font-bold mb-4">
                 Need a Custom Quote?
               </h3>
