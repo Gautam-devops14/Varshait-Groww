@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CTASection } from "@/components/sections/cta"
@@ -145,10 +146,67 @@ const videoItems = [
 const websiteItems: { id: number; title: string; description: string; desktopColor: string; mobileColor: string; liveUrl: string }[] = []
 
 export default function PortfolioPage() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  
+  // Initialize state from URL params or defaults
   const [activeCategory, setActiveCategory] = useState("All")
   const [thumbnailFilter, setThumbnailFilter] = useState("All Thumbnails")
   const [videoFilter, setVideoFilter] = useState("All Videos")
   const [selectedThumbnail, setSelectedThumbnail] = useState<typeof thumbnailItems[0] | null>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  // Load initial values from URL on mount
+  useEffect(() => {
+    const category = searchParams.get("category") || "All"
+    const sub = searchParams.get("sub")
+
+    setActiveCategory(category)
+
+    // Set subcategory filter based on active category
+    if (category === "Thumbnails" && sub) {
+      const validThumbnailSub = thumbnailCategories.find(cat => cat.toLowerCase() === sub.toLowerCase())
+      if (validThumbnailSub) setThumbnailFilter(validThumbnailSub)
+    } else if (category === "Video Editing" && sub) {
+      const validVideoSub = videoCategories.find(cat => cat.toLowerCase() === sub.toLowerCase())
+      if (validVideoSub) setVideoFilter(validVideoSub)
+    }
+
+    setIsLoaded(true)
+  }, [searchParams])
+
+  // Update URL when filters change
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category)
+    const params = new URLSearchParams(searchParams)
+    params.set("category", category)
+    params.delete("sub") // Clear subcategory when changing main category
+    router.push(`?${params.toString()}`, { scroll: false })
+  }
+
+  const handleThumbnailFilterChange = (filter: string) => {
+    setThumbnailFilter(filter)
+    const params = new URLSearchParams(searchParams)
+    params.set("category", "Thumbnails")
+    if (filter !== "All Thumbnails") {
+      params.set("sub", filter)
+    } else {
+      params.delete("sub")
+    }
+    router.push(`?${params.toString()}`, { scroll: false })
+  }
+
+  const handleVideoFilterChange = (filter: string) => {
+    setVideoFilter(filter)
+    const params = new URLSearchParams(searchParams)
+    params.set("category", "Video Editing")
+    if (filter !== "All Videos") {
+      params.set("sub", filter)
+    } else {
+      params.delete("sub")
+    }
+    router.push(`?${params.toString()}`, { scroll: false })
+  }
 
   const filteredThumbnails = thumbnailFilter === "All Thumbnails" 
     ? thumbnailItems 
@@ -192,7 +250,7 @@ export default function PortfolioPage() {
             {mainCategories.map((category) => (
               <button
                 key={category}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => handleCategoryChange(category)}
                 className={cn(
                   "px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
                   activeCategory === category
@@ -233,7 +291,7 @@ export default function PortfolioPage() {
                     {thumbnailCategories.map((cat) => (
                       <button
                         key={cat}
-                        onClick={() => setThumbnailFilter(cat)}
+                        onClick={() => handleThumbnailFilterChange(cat)}
                         className={cn(
                           "px-4 py-2 rounded-full text-xs font-medium transition-all duration-300",
                           thumbnailFilter === cat
@@ -319,7 +377,7 @@ export default function PortfolioPage() {
                 {videoCategories.map((cat) => (
                   <button
                     key={cat}
-                    onClick={() => setVideoFilter(cat)}
+                    onClick={() => handleVideoFilterChange(cat)}
                     className={cn(
                       "px-4 py-2 rounded-full text-xs font-medium transition-all duration-300",
                       videoFilter === cat
